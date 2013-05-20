@@ -7,10 +7,15 @@ Using this repo in your maven project
 * add this to your `pom.xml` for `SNAPSHOTS`
 
     <repositories>
+
         <repository>
+        
             <id>neo4j-contrib-snapshots</id>
+        
             <url>https://github.com/neo4j-contrib/m2/raw/master/snapshots</url>
+        
         </repository>
+    
     </repositories>
 
 
