@@ -6,33 +6,37 @@ Using this repo in your maven project
 
 * add this to your `pom.xml` for `SNAPSHOTS`
 
+````xml
     <repositories>
         <repository>
             <id>neo4j-contrib-snapshots</id>
             <url>https://github.com/neo4j-contrib/m2/raw/master/snapshots/url>
         </repository>
     </repositories>
-
+````
 
 * add this to your `pom.xml` for `RELEASE`
 
+````xml
     <repositories>
         <repository>
             <id>neo4j-contrib-release</id>
             <url>https://github.com/neo4j-contrib/m2/raw/master/release</url>
         </repository>
     </repositories>
+````
 
 To deploy to this repo
 ----------------------
 
 * clone this repo to your machine
     
-    git clone 
+    `git clone`
 
 * add this repo to your pom:
 
-    <distributionManagement>
+````xml
+<distributionManagement>
         <repository>
             <id>repo</id>
             <url>https://github.com/cemerick/cemerick-mvn-repo/raw/master/releases</url>
@@ -42,14 +46,17 @@ To deploy to this repo
             <url>https://github.com/cemerick/cemerick-mvn-repo/raw/master/snapshots</url>
         </snapshotRepository>
     </distributionManagement>
+````
 
 * deploy your project to your local clone of this repo, e.g.
 
-    mvn -DaltDeploymentRepository=snapshot-repo::default::file:../m2/snapshots clean deploy
+    `mvn -DaltDeploymentRepository=snapshot-repo::default::file:../m2/snapshots clean deploy`
 
 * push the added stuff to Github
 
+````shell
     cd ../m2
     git add *
     git commit -m "next SNAPSHOT release"
     git push origin master
+````
