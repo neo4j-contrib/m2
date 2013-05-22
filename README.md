@@ -4,27 +4,34 @@ Neo4j-contrib maven repo
 Using this repo in your maven project
 -------------------------------------
 
-* add this to your `pom.xml` for `SNAPSHOTS`
+* add this to your `pom.xml`:
 
 ````xml
     <repositories>
+        <repository>
+            <id>neo4j-contrib-releases</id>
+            <url>https://raw.github.com/neo4j-contrib/m2/master/releases</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
         <repository>
             <id>neo4j-contrib-snapshots</id>
-            <url>https://github.com/neo4j-contrib/m2/raw/master/snapshots/url>
+            <url>https://raw.github.com/neo4j-contrib/m2/master/snapshots</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
         </repository>
     </repositories>
 ````
 
-* add this to your `pom.xml` for `RELEASE`
-
-````xml
-    <repositories>
-        <repository>
-            <id>neo4j-contrib-release</id>
-            <url>https://github.com/neo4j-contrib/m2/raw/master/release</url>
-        </repository>
-    </repositories>
-````
+You can remove the releases or snapshots part as needed.
 
 To deploy to this repo
 ----------------------
@@ -36,14 +43,14 @@ To deploy to this repo
 * add this repo to your pom:
 
 ````xml
-<distributionManagement>
+    <distributionManagement>
         <repository>
             <id>repo</id>
-            <url>https://github.com/cemerick/cemerick-mvn-repo/raw/master/releases</url>
+            <url>https://raw.github.com/neo4j-contrib/m2/master/releases</url>
         </repository>
         <snapshotRepository>
             <id>snapshot-repo</id>
-            <url>https://github.com/cemerick/cemerick-mvn-repo/raw/master/snapshots</url>
+            <url>https://raw.github.com/neo4j-contrib/m2/master/snapshots</url>
         </snapshotRepository>
     </distributionManagement>
 ````
@@ -51,6 +58,9 @@ To deploy to this repo
 * deploy your project to your local clone of this repo, e.g.
 
     `mvn -DaltDeploymentRepository=snapshot-repo::default::file:../m2/snapshots clean deploy`
+or
+    `mvn -DaltDeploymentRepository=repo::default::file:../m2/releases clean deploy`
+
 
 * push the added stuff to Github
 
