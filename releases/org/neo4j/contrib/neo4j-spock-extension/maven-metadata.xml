@@ -3,7 +3,7 @@
   <groupId>org.neo4j.contrib</groupId>
   <artifactId>neo4j-spock-extension</artifactId>
   <versioning>
-    <release>0.6.0</release>
+    <release>0.7.0</release>
     <versions>
       <version>0.1</version>
       <version>0.2</version>
@@ -13,7 +13,8 @@
       <version>0.5.1</version>
       <version>0.5.2</version>
       <version>0.6.0</version>
+      <version>0.7.0</version>
     </versions>
-    <lastUpdated>20151026021458</lastUpdated>
+    <lastUpdated>20160227203434</lastUpdated>
   </versioning>
 </metadata>
