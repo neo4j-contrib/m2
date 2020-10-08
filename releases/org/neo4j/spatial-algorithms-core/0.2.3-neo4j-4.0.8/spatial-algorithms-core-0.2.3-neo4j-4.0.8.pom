@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>org.neo4j</groupId>
+        <artifactId>spatial-algorithms-parent</artifactId>
+        <version>0.2.3-neo4j-4.0.8</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>spatial-algorithms-core</artifactId>
+
+    <name>Spatial Algorithms :: Core</name>
+    <description>Data model for use in spatial algorithms</description>
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-library</artifactId>
+            <version>1.3</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+                <configuration>
+                    <!-- Neo4j Procedures require Java 8 -->
+                    <compilerVersion>${javac.target}</compilerVersion>
+                    <source>${javac.target}</source>
+                    <target>${javac.target}</target>
+                    <compilerArgs>
+                        <arg>-AIgnoreContextWarnings</arg>
+                        <arg>-AGeneratedDocumentationPath=target/generated-documentation</arg>
+                        <arg>-ADocumentation.FieldDelimiter=¦</arg>
+                        <arg>-ADocumentation.ExportedHeaders=qualified name¦description</arg>
+                        <arg>-ADocumentation.QuotedFields=false</arg>
+                        <arg>-ADocumentation.DelimitedFirstField=true</arg>
+                        <arg>-ADocumentation.ExportGrouping=PACKAGE</arg>
+                    </compilerArgs>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
