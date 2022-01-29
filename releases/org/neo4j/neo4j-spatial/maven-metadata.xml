@@ -3,7 +3,7 @@
   <groupId>org.neo4j</groupId>
   <artifactId>neo4j-spatial</artifactId>
   <versioning>
-    <release>0.28.0-neo4j-4.2.3</release>
+    <release>0.28.1-neo4j-4.3.10</release>
     <versions>
       <version>0.11-neo4j-1.9.5</version>
       <version>0.12-neo4j-2.0.0</version>
@@ -82,7 +82,9 @@
       <version>0.27.1-neo4j-4.1.7</version>
       <version>0.27.2-neo4j-4.2.3</version>
       <version>0.28.0-neo4j-4.2.3</version>
+      <version>0.28.0-neo4j-4.3.10</version>
+      <version>0.28.1-neo4j-4.3.10</version>
     </versions>
-    <lastUpdated>20210321142946</lastUpdated>
+    <lastUpdated>20220129172123</lastUpdated>
   </versioning>
 </metadata>
